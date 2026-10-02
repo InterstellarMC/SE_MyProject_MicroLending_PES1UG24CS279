@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="micro-lending-uc" name="UML Use-Case Diagram">
+    <mxGraphModel dx="1168" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#17365D;align=left;" value="Micro-Lending &amp;amp; Peer Credit Risk Assessor" vertex="1">
+          <mxGeometry height="35" width="850" x="45" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666666;align=left;" value="UML Use-Case Diagram • Problem Statement #33" vertex="1">
+          <mxGeometry height="24" width="700" x="45" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=16;fontStyle=1;align=left;verticalAlign=top;spacingTop=12;spacingLeft=14;" value="Micro-Lending Platform" vertex="1">
+          <mxGeometry height="590" width="760" x="245" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="UC01" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-01&lt;br&gt;Apply for Micro-Loan" vertex="1">
+          <mxGeometry height="62" width="190" x="320" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="UC02" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-02&lt;br&gt;Submit / Update Financial Profile" vertex="1">
+          <mxGeometry height="62" width="190" x="320" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="UC03" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-03&lt;br&gt;Assess Borrower Credit Risk" vertex="1">
+          <mxGeometry height="62" width="190" x="535" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="UC04" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-04&lt;br&gt;Generate Repayment Schedule" vertex="1">
+          <mxGeometry height="62" width="190" x="535" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="UC05" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-05&lt;br&gt;Review Loan Opportunities" vertex="1">
+          <mxGeometry height="62" width="190" x="770" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="UC06" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-06&lt;br&gt;Fund Loan" vertex="1">
+          <mxGeometry height="62" width="190" x="770" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="UC07" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-07&lt;br&gt;Make Loan Repayment" vertex="1">
+          <mxGeometry height="62" width="190" x="320" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="UC08" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-08&lt;br&gt;Monitor Repayment Status" vertex="1">
+          <mxGeometry height="62" width="190" x="535" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="UC09" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0e8088;fillColor=#b0e3e6;fontSize=13;align=center;verticalAlign=middle;" value="UC-09&lt;br&gt;Trigger Default Warning" vertex="1">
+          <mxGeometry height="62" width="190" x="770" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="borrower" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fontColor=#222222;" value="Borrower" vertex="1">
+          <mxGeometry height="70" width="60" x="95" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="lender" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fontColor=#222222;" value="Peer Lender" vertex="1">
+          <mxGeometry height="70" width="60" x="95" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fontColor=#222222;" value="Payment Gateway" vertex="1">
+          <mxGeometry height="70" width="60" x="1080" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="notify" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;fontStyle=1;fontColor=#222222;" value="Notification Service" vertex="1">
+          <mxGeometry height="70" width="60" x="1080" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="borrower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="borrower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="borrower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="lender" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="lender" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="lender" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC08">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#555555;strokeWidth=1.3;endArrow=none;" target="UC09">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc1" edge="1" parent="1" source="UC01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;strokeColor=#2F5597;strokeWidth=1.4;endArrow=block;endFill=0;fontSize=11;fontStyle=2;fontColor=#2F5597;labelBackgroundColor=#F8FBFF;" target="UC02" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc2" edge="1" parent="1" source="UC01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;strokeColor=#2F5597;strokeWidth=1.4;endArrow=block;endFill=0;fontSize=11;fontStyle=2;fontColor=#2F5597;labelBackgroundColor=#F8FBFF;" target="UC03" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc3" edge="1" parent="1" source="UC01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;strokeColor=#2F5597;strokeWidth=1.4;endArrow=block;endFill=0;fontSize=11;fontStyle=2;fontColor=#2F5597;labelBackgroundColor=#F8FBFF;" target="UC04" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" edge="1" parent="1" source="UC09" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=6 4;strokeColor=#C55A11;strokeWidth=1.4;endArrow=block;endFill=0;fontSize=11;fontStyle=2;fontColor=#C55A11;labelBackgroundColor=#FFF7EF;" target="UC08" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad9d5;fontSize=11;spacing=7;strokeColor=#ae4132;" value="&lt;b&gt;Relationship semantics&lt;/b&gt;&lt;br&gt;«include» = mandatory reusable behaviour&lt;br&gt;«extend» = optional / conditional behaviour" vertex="1">
+          <mxGeometry height="90" width="300" x="270" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#ae4132;fillColor=#fad9d5;fontSize=11;spacing=7;" value="&lt;b&gt;Key scenario&lt;/b&gt;&lt;br&gt;Borrower applies → profile is validated → risk is assessed → schedule is generated.&lt;br&gt;Peer lenders can review and fund eligible loans." vertex="1">
+          <mxGeometry height="90" width="360" x="590" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#D9D9D9;fillColor=#FFFFFF;fontSize=10;fontColor=#444444;align=center;verticalAlign=middle;" value="&lt;b&gt;Legend&lt;/b&gt; &amp;nbsp; Solid = actor association &amp;nbsp;&amp;nbsp; &lt;font color=&#39;#2F5597&#39;&gt;Blue dashed = «include»&lt;/font&gt; &amp;nbsp;&amp;nbsp; &lt;font color=&#39;#C55A11&#39;&gt;Orange dashed = «extend»&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="760" x="245" y="715" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
