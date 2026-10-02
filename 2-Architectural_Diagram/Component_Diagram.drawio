@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T18:25:00.000Z" agent="Mozilla/5.0" version="21.0.0" type="device">
+  <diagram id="component-diagram-bps33" name="UML Component Diagram">
+    <mxGraphModel dx="1240" dy="840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Header -->
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#0B3D91;align=left;" value="UML Component Diagram: Micro-Lending &amp;amp; Peer Credit Risk Assessor" vertex="1">
+          <mxGeometry height="35" width="950" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#555555;align=left;" value="Course: UE24CS341A (SE Lab 3) • Problem Statement #33 • Student: Mudit Chaturvedi (PES1UG24CS279)" vertex="1">
+          <mxGeometry height="24" width="850" x="40" y="55" as="geometry" />
+        </mxCell>
+
+        <!-- Presentation Subsystem Boundary -->
+        <mxCell id="layer_pres" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#4A90E2;fillColor=#F4F8FD;fontSize=13;fontStyle=1;fontColor=#1F4E79;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;dashed=1;" value="Presentation &amp;amp; Client Boundary (Web / Mobile Apps)" vertex="1">
+          <mxGeometry height="140" width="1180" x="40" y="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cmp_borrower_ui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#1F4E79;fillColor=#FFFFFF;fontSize=11;fontStyle=1;fontColor=#1F4E79;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Borrower Portal UI&lt;/b&gt;&lt;br&gt;[React / Mobile Client]" vertex="1">
+          <mxGeometry height="70" width="220" x="120" y="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cmp_lender_ui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#1F4E79;fillColor=#FFFFFF;fontSize=11;fontStyle=1;fontColor=#1F4E79;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Peer Lender Portal UI&lt;/b&gt;&lt;br&gt;[Investor Marketplace]" vertex="1">
+          <mxGeometry height="70" width="220" x="720" y="130" as="geometry" />
+        </mxCell>
+
+        <!-- Business Logic Subsystem Boundary -->
+        <mxCell id="layer_biz" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#2E7D32;fillColor=#F5FBF6;fontSize=13;fontStyle=1;fontColor=#1E5A22;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;dashed=1;" value="Core Domain &amp;amp; Business Services (Micro-Lending Engine)" vertex="1">
+          <mxGeometry height="430" width="1180" x="40" y="250" as="geometry" />
+        </mxCell>
+
+        <!-- Component 1: Loan & Borrower Management -->
+        <mxCell id="cmp1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Loan &amp;amp; Borrower Management&lt;/b&gt;&lt;br&gt;[Application Orchestrator]" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="300" as="geometry" />
+        </mxCell>
+
+        <!-- Component 2: Credit Risk Evaluation Engine -->
+        <mxCell id="cmp2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Credit Risk Evaluation Engine&lt;/b&gt;&lt;br&gt;[Heuristic Scoring &amp;amp; DTI Rules]" vertex="1">
+          <mxGeometry height="80" width="240" x="470" y="300" as="geometry" />
+        </mxCell>
+
+        <!-- Component 3: Amortization & Repayment Engine -->
+        <mxCell id="cmp3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Amortization &amp;amp; Schedule Engine&lt;/b&gt;&lt;br&gt;[Reducing Balance EMI Generator]" vertex="1">
+          <mxGeometry height="80" width="240" x="860" y="300" as="geometry" />
+        </mxCell>
+
+        <!-- Component 4: P2P Marketplace & Escrow Service -->
+        <mxCell id="cmp4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;P2P Marketplace &amp;amp; Escrow Service&lt;/b&gt;&lt;br&gt;[Fractional Funding &amp;amp; Allocation]" vertex="1">
+          <mxGeometry height="80" width="240" x="80" y="470" as="geometry" />
+        </mxCell>
+
+        <!-- Component 5: Payment & Settlement Ledger -->
+        <mxCell id="cmp5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Payment Gateway &amp;amp; Settlement Service&lt;/b&gt;&lt;br&gt;[ACID Ledger &amp;amp; Payouts]" vertex="1">
+          <mxGeometry height="80" width="240" x="470" y="470" as="geometry" />
+        </mxCell>
+
+        <!-- Component 6: Default Monitoring & Notification -->
+        <mxCell id="cmp6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#0B3D91;fillColor=#EBF3FB;fontSize=12;fontStyle=1;fontColor=#0B3D91;align=center;" value="&amp;laquo;component&amp;raquo;&lt;br&gt;&lt;b&gt;Default Monitor &amp;amp; Alert Service&lt;/b&gt;&lt;br&gt;[Grace Watcher &amp;amp; Escalations]" vertex="1">
+          <mxGeometry height="80" width="240" x="860" y="470" as="geometry" />
+        </mxCell>
+
+        <!-- External & Persistence Subsystem Boundary -->
+        <mxCell id="layer_ext" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#C55A11;fillColor=#FDF7F2;fontSize=13;fontStyle=1;fontColor=#843C0C;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;dashed=1;" value="External Services &amp;amp; Data Persistence Layer" vertex="1">
+          <mxGeometry height="140" width="1180" x="40" y="700" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cmp_db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;strokeWidth=1.5;strokeColor=#843C0C;fillColor=#FFFFFF;fontSize=11;fontStyle=1;fontColor=#843C0C;align=center;" value="&amp;laquo;database&amp;raquo;&lt;br&gt;&lt;b&gt;Relational Financial DB&lt;/b&gt;&lt;br&gt;[PostgreSQL / ACID Ledger]" vertex="1">
+          <mxGeometry height="80" width="200" x="130" y="735" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cmp_ext_pg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#843C0C;fillColor=#FFFFFF;fontSize=11;fontStyle=1;fontColor=#843C0C;align=center;" value="&amp;laquo;external system&amp;raquo;&lt;br&gt;&lt;b&gt;Bank / UPI Payment Gateway&lt;/b&gt;&lt;br&gt;[Razorpay / Cashfree API]" vertex="1">
+          <mxGeometry height="70" width="220" x="480" y="740" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cmp_ext_sms" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1.5;strokeColor=#843C0C;fillColor=#FFFFFF;fontSize=11;fontStyle=1;fontColor=#843C0C;align=center;" value="&amp;laquo;external system&amp;raquo;&lt;br&gt;&lt;b&gt;SMS &amp;amp; Email Dispatcher&lt;/b&gt;&lt;br&gt;[Twilio / SendGrid Gateway]" vertex="1">
+          <mxGeometry height="70" width="220" x="870" y="740" as="geometry" />
+        </mxCell>
+
+        <!-- BALL & SOCKET INTERFACES -->
+
+        <!-- Interface 1: ICreditAssessment (Between cmp1 and cmp2) -->
+        <mxCell id="ball1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0B3D91;strokeColor=#0B3D91;" vertex="1">
+          <mxGeometry height="14" width="14" x="420" y="333" as="geometry" />
+        </mxCell>
+        <mxCell id="wire1_prov" edge="1" parent="1" source="cmp2" target="ball1" style="endArrow=none;strokeColor=#0B3D91;strokeWidth=1.8;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire1_req" edge="1" parent="1" source="cmp1" target="ball1" style="endArrow=oval;endFill=0;strokeColor=#0B3D91;strokeWidth=1.8;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_if1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=1;fontColor=#0B3D91;" value="ICreditAssessment&lt;br&gt;(REST / JSON)" vertex="1">
+          <mxGeometry height="26" width="110" x="370" y="352" as="geometry" />
+        </mxCell>
+
+        <!-- Interface 2: IScheduleGenerator (Between cmp1 and cmp3) -->
+        <mxCell id="ball2" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0B3D91;strokeColor=#0B3D91;" vertex="1">
+          <mxGeometry height="14" width="14" x="780" y="333" as="geometry" />
+        </mxCell>
+        <mxCell id="wire2_prov" edge="1" parent="1" source="cmp3" target="ball2" style="endArrow=none;strokeColor=#0B3D91;strokeWidth=1.8;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire2_req" edge="1" parent="1" source="cmp2" target="ball2" style="endArrow=oval;endFill=0;strokeColor=#0B3D91;strokeWidth=1.8;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_if2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=1;fontColor=#0B3D91;" value="IScheduleGenerator&lt;br&gt;(gRPC / Internal)" vertex="1">
+          <mxGeometry height="26" width="120" x="730" y="352" as="geometry" />
+        </mxCell>
+
+        <!-- Interface 3: IEscrowFunding (Between cmp1 and cmp4) -->
+        <mxCell id="ball3" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0B3D91;strokeColor=#0B3D91;" vertex="1">
+          <mxGeometry height="14" width="14" x="193" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="wire3_prov" edge="1" parent="1" source="cmp4" target="ball3" style="endArrow=none;strokeColor=#0B3D91;strokeWidth=1.8;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire3_req" edge="1" parent="1" source="cmp1" target="ball3" style="endArrow=oval;endFill=0;strokeColor=#0B3D91;strokeWidth=1.8;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_if3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;fontColor=#0B3D91;" value="IEscrowFunding&lt;br&gt;(Internal Service API)" vertex="1">
+          <mxGeometry height="26" width="120" x="215" y="415" as="geometry" />
+        </mxCell>
+
+        <!-- Interface 4: IPaymentSettlement (Between cmp4 and cmp5) -->
+        <mxCell id="ball4" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0B3D91;strokeColor=#0B3D91;" vertex="1">
+          <mxGeometry height="14" width="14" x="390" y="503" as="geometry" />
+        </mxCell>
+        <mxCell id="wire4_prov" edge="1" parent="1" source="cmp5" target="ball4" style="endArrow=none;strokeColor=#0B3D91;strokeWidth=1.8;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire4_req" edge="1" parent="1" source="cmp4" target="ball4" style="endArrow=oval;endFill=0;strokeColor=#0B3D91;strokeWidth=1.8;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_if4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=1;fontColor=#0B3D91;" value="IPaymentSettlement&lt;br&gt;(ACID Ledger Calls)" vertex="1">
+          <mxGeometry height="26" width="120" x="340" y="525" as="geometry" />
+        </mxCell>
+
+        <!-- Interface 5: IDefaultAlert (Between cmp5, cmp6, and cmp3) -->
+        <mxCell id="ball5" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0B3D91;strokeColor=#0B3D91;" vertex="1">
+          <mxGeometry height="14" width="14" x="973" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="wire5_prov" edge="1" parent="1" source="cmp6" target="ball5" style="endArrow=none;strokeColor=#0B3D91;strokeWidth=1.8;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire5_req" edge="1" parent="1" source="cmp3" target="ball5" style="endArrow=oval;endFill=0;strokeColor=#0B3D91;strokeWidth=1.8;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_if5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontStyle=1;fontColor=#0B3D91;" value="IDefaultAlert&lt;br&gt;(Event / Webhook)" vertex="1">
+          <mxGeometry height="26" width="120" x="995" y="415" as="geometry" />
+        </mxCell>
+
+        <!-- Connections to External Layer -->
+        <mxCell id="conn_db" edge="1" parent="1" source="cmp5" target="cmp_db" style="endArrow=classic;strokeColor=#843C0C;strokeWidth=1.5;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_pg" edge="1" parent="1" source="cmp5" target="cmp_ext_pg" style="endArrow=classic;strokeColor=#843C0C;strokeWidth=1.5;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_sms" edge="1" parent="1" source="cmp6" target="cmp_ext_sms" style="endArrow=classic;strokeColor=#843C0C;strokeWidth=1.5;dashed=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Client UI connections -->
+        <mxCell id="conn_ui1" edge="1" parent="1" source="cmp_borrower_ui" target="cmp1" style="endArrow=classic;strokeColor=#1F4E79;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="conn_ui2" edge="1" parent="1" source="cmp_lender_ui" target="cmp4" style="endArrow=classic;strokeColor=#1F4E79;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend Box -->
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#999999;fillColor=#FFFFFF;fontSize=10;fontColor=#333333;align=left;spacingLeft=10;" value="&lt;b&gt;UML Component Notation Legend:&lt;/b&gt;&lt;br&gt;• Solid Rectangle: Software Component with encapsulated logic&lt;br&gt;• Ball (—o): Provided Interface (Services offered)&lt;br&gt;• Socket ()—): Required Interface (Services consumed)&lt;br&gt;• Dashed Arrow: Subsystem Dependency / Persistent Connection" vertex="1">
+          <mxGeometry height="70" width="380" x="780" y="125" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
