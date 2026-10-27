@@ -13,6 +13,7 @@ from enum import Enum
 
 class AlertLevel(str, Enum):
     """Reminder and default stages based on days overdue."""
+
     ON_TIME = "ON_TIME"
     GRACE_PERIOD_REMINDER = "GRACE_PERIOD_REMINDER"  # 1 to 3 days overdue
     FIRST_OVERDUE_WARNING = "FIRST_OVERDUE_WARNING"  # 4 to 14 days overdue
@@ -22,6 +23,7 @@ class AlertLevel(str, Enum):
 @dataclass
 class AlertNotification:
     """Details of a repayment warning for a borrower."""
+
     borrower_id: str
     loan_id: str
     installment_month: int
@@ -34,7 +36,7 @@ class AlertNotification:
 
 class DefaultMonitor:
     """
-    Monitors repayment due dates and automatically triggers tiered default warnings.
+    Checks repayment dates and selects the appropriate default warning.
     Satisfies FR-005.
     """
 
@@ -43,7 +45,13 @@ class DefaultMonitor:
     LATE_PENALTY_RATE = 0.02  # 2% late fee on overdue installment
 
     def check_installment_status(
-        self, borrower_id: str, loan_id: str, installment_month: int, due_date: date, emi_amount: float, current_date: date
+        self,
+        borrower_id: str,
+        loan_id: str,
+        installment_month: int,
+        due_date: date,
+        emi_amount: float,
+        current_date: date,
     ) -> AlertNotification:
         """Choose a warning and penalty from the installment due date."""
         overdue_days = (current_date - due_date).days
@@ -68,8 +76,10 @@ class DefaultMonitor:
                 overdue_days=overdue_days,
                 alert_level=AlertLevel.GRACE_PERIOD_REMINDER,
                 message=(
-                    f"Reminder: Installment #{installment_month} is {overdue_days} day(s) past due. "
-                    f"Please settle within the 3-day grace period to avoid penalties."
+                    f"Reminder: Installment #{installment_month} is "
+                    f"{overdue_days} day(s) past due. "
+                    "Please settle within the 3-day grace period "
+                    "to avoid penalties."
                 ),
                 penalty_fee=0.0,
                 downgrade_risk_tier=False,
@@ -84,8 +94,11 @@ class DefaultMonitor:
                 overdue_days=overdue_days,
                 alert_level=AlertLevel.FIRST_OVERDUE_WARNING,
                 message=(
-                    f"Urgent Overdue Warning: Grace period expired. Installment #{installment_month} is {overdue_days} "
-                    f"days overdue. A late fee of Rs. {penalty:,.2f} has been levied."
+                    "Urgent Overdue Warning: Grace period expired. "
+                    f"Installment #{installment_month} is "
+                    f"{overdue_days} "
+                    "days overdue. A late fee of Rs. "
+                    f"{penalty:,.2f} has been levied."
                 ),
                 penalty_fee=penalty,
                 downgrade_risk_tier=False,
@@ -100,8 +113,11 @@ class DefaultMonitor:
             overdue_days=overdue_days,
             alert_level=AlertLevel.DEFAULT_NOTICE,
             message=(
-                f"FORMAL DEFAULT NOTICE: Loan {loan_id} installment #{installment_month} is {overdue_days} days delinquent. "
-                f"Credit rating downgraded to High Risk. Collection proceedings initiated."
+                f"FORMAL DEFAULT NOTICE: Loan {loan_id} "
+                f"installment #{installment_month} is "
+                f"{overdue_days} days delinquent. "
+                "Credit rating downgraded to High Risk. "
+                "Collection proceedings initiated."
             ),
             penalty_fee=penalty,
             downgrade_risk_tier=True,

@@ -13,6 +13,7 @@ from typing import Optional
 
 class RiskTier(str, Enum):
     """Risk categories used by the assessment result."""
+
     LOW = "Low"
     MEDIUM = "Medium"
     HIGH = "High"
@@ -22,16 +23,19 @@ class RiskTier(str, Enum):
 @dataclass
 class FinancialProfile:
     """Income, debt and repayment details supplied for assessment."""
+
     monthly_income: float
     existing_monthly_debt: float
     employment_tenure_months: int
     is_salaried: bool
-    repayment_history_ratio: float  # Value between 0.0 and 1.0 (on-time payments / total installments)
+    # Value between 0.0 and 1.0 (on-time payments / total installments)
+    repayment_history_ratio: float
 
 
 @dataclass
 class AssessmentResult:
     """Score, lending limit and decision returned for an application."""
+
     credit_score: int
     risk_tier: RiskTier
     debt_to_income_ratio: float
@@ -51,17 +55,23 @@ class CreditRiskAssessor:
     MIN_CREDIT_SCORE = 300
     MAX_CREDIT_SCORE = 850
 
-    def evaluate(self, profile: FinancialProfile, requested_amount: float) -> AssessmentResult:
+    def evaluate(
+        self, profile: FinancialProfile, requested_amount: float
+    ) -> AssessmentResult:
         # Step 1: Input Validation
         """Validate a borrower profile and apply the credit scoring rules."""
         if profile.monthly_income <= 0:
-            raise ValueError("Monthly income must be strictly greater than zero.")
+            raise ValueError(
+                "Monthly income must be strictly greater than zero."
+            )
         if profile.existing_monthly_debt < 0:
             raise ValueError("Existing monthly debt cannot be negative.")
         if profile.employment_tenure_months < 0:
             raise ValueError("Employment tenure cannot be negative.")
         if not 0.0 <= profile.repayment_history_ratio <= 1.0:
-            raise ValueError("Repayment history ratio must be between 0.0 and 1.0.")
+            raise ValueError(
+                "Repayment history ratio must be between 0.0 and 1.0."
+            )
         if requested_amount <= 0:
             raise ValueError("Requested loan amount must be positive.")
 
@@ -77,7 +87,8 @@ class CreditRiskAssessor:
                 recommended_apr=0.0,
                 max_borrowing_limit=0.0,
                 is_approved=False,
-                rejection_reason=f"Debt-to-Income ratio ({dti:.1f}%) exceeds maximum statutory threshold of 60.0%."
+                rejection_reason=f"Debt-to-Income ratio ({dti:.1f}%) exceeds "
+                "maximum statutory threshold of 60.0%.",
             )
 
         # Step 3: Heuristic Sub-Scores (each scaled to 0-100)
@@ -92,16 +103,19 @@ class CreditRiskAssessor:
         # c) Repayment History Score
         repayment_score = profile.repayment_history_ratio * 100.0
 
-        # Step 4: Weighted Composite Score (Weights: 45% DTI, 30% Repayment, 25% Stability)
+        # Step 4: Weighted Composite Score (Weights: 45% DTI, 30% Repayment,
+        # 25% Stability)
         composite_metric = (
-            (0.45 * dti_score) +
-            (0.30 * repayment_score) +
-            (0.25 * employment_score)
+            (0.45 * dti_score)
+            + (0.30 * repayment_score)
+            + (0.25 * employment_score)
         )
 
         # Scale linearly to financial score range [300, 850]
         credit_score = int(round(300 + (5.5 * composite_metric)))
-        credit_score = max(self.MIN_CREDIT_SCORE, min(self.MAX_CREDIT_SCORE, credit_score))
+        credit_score = max(
+            self.MIN_CREDIT_SCORE, min(self.MAX_CREDIT_SCORE, credit_score)
+        )
 
         # Step 5: Risk Tiering & Benchmark Pricing
         if credit_score >= 720:
@@ -124,7 +138,8 @@ class CreditRiskAssessor:
                 recommended_apr=0.0,
                 max_borrowing_limit=0.0,
                 is_approved=False,
-                rejection_reason=f"Credit score ({credit_score}) is below minimum underwriting threshold (450)."
+                rejection_reason=f"Credit score ({credit_score}) is below "
+                "minimum underwriting threshold (450).",
             )
 
         # Check if requested principal is within allowed risk limits
@@ -132,8 +147,11 @@ class CreditRiskAssessor:
         rejection_reason = None
         if not is_approved:
             rejection_reason = (
-                f"Requested amount (Rs. {requested_amount:,.2f}) exceeds maximum allowed borrowing limit "
-                f"(Rs. {max_limit:,.2f}) for assigned {risk_tier.value} Risk tier."
+                "Requested amount (Rs. "
+                f"{requested_amount:,.2f}) exceeds maximum "
+                "allowed borrowing limit "
+                f"(Rs. {max_limit:,.2f}) for assigned "
+                f"{risk_tier.value} Risk tier."
             )
 
         return AssessmentResult(
@@ -143,5 +161,5 @@ class CreditRiskAssessor:
             recommended_apr=recommended_apr,
             max_borrowing_limit=max_limit,
             is_approved=is_approved,
-            rejection_reason=rejection_reason
+            rejection_reason=rejection_reason,
         )

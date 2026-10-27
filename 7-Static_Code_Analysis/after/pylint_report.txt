@@ -1,0 +1,21 @@
+************* Module amortization_schedule
+5-Github_Copilot_Generated_Code/amortization_schedule.py:15:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
+5-Github_Copilot_Generated_Code/amortization_schedule.py:63:4: R0914: Too many local variables (17/15) (too-many-locals)
+************* Module credit_risk_assessor
+5-Github_Copilot_Generated_Code/credit_risk_assessor.py:58:4: R0914: Too many local variables (16/15) (too-many-locals)
+5-Github_Copilot_Generated_Code/credit_risk_assessor.py:48:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module default_monitor
+5-Github_Copilot_Generated_Code/default_monitor.py:24:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
+5-Github_Copilot_Generated_Code/default_monitor.py:47:4: R0913: Too many arguments (7/5) (too-many-arguments)
+5-Github_Copilot_Generated_Code/default_monitor.py:47:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+5-Github_Copilot_Generated_Code/default_monitor.py:37:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module escrow_marketplace
+5-Github_Copilot_Generated_Code/escrow_marketplace.py:35:0: R0902: Too many instance attributes (9/7) (too-many-instance-attributes)
+5-Github_Copilot_Generated_Code/escrow_marketplace.py:75:4: R0913: Too many arguments (7/5) (too-many-arguments)
+5-Github_Copilot_Generated_Code/escrow_marketplace.py:75:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+************* Module main
+5-Github_Copilot_Generated_Code/main.py:16:0: R0915: Too many statements (54/50) (too-many-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 9.61/10 (previous run: 8.17/10, +1.43)
+

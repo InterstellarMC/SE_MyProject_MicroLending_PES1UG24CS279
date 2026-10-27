@@ -129,3 +129,11 @@ pytest -v test_micro_lending.py
 
 ## 6. Academic Integrity & Verification
 This repository and all associated deliverables represent original academic coursework completed for **UE24CS341A: Software Engineering** at PES University. All diagrams adhere to UML 2.5 standards, requirements follow IEEE Std 830-1998 guidelines, and agile workflows reflect authentic project management on Atlassian Jira Cloud.
+
+## Lab 5: Static Code Analysis
+
+The [lab report](7-Static_Code_Analysis/Lab_5_Report.md) documents the cleanup
+of the five Python modules. Pylint improved from 8.17 to 9.61, Flake8 has
+zero remaining findings, and Bandit reports no security findings before
+or after. All eight existing tests pass. See
+[run instructions and raw reports](7-Static_Code_Analysis/README.md).

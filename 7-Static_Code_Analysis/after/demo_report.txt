@@ -1,0 +1,57 @@
+================================================================================
+ MICRO-LENDING & PEER CREDIT RISK ASSESSOR PLATFORM
+ PES University - Dept. of CSE | Problem Statement #33
+ Student: Mudit Chaturvedi | SRN: PES1UG24CS279
+================================================================================
+
+[Step 1] Ingesting Borrower Profile & Computing Credit Risk (FR-001)...
+ -> Monthly Net Income       : Rs. 65,000.00
+ -> Existing Monthly Debt    : Rs. 14,000.00
+ -> Debt-to-Income (DTI)     : 21.5%
+ -> Heuristic Credit Score   : 717 / 850
+ -> Assigned Risk Tier       : Medium
+ -> Benchmark APR            : 15.0%
+ -> Maximum Credit Limit     : Rs. 50,000.00
+ -> Underwriting Status      : APPROVED
+
+[Step 2] Generating Reducing Balance Amortization Schedule (FR-002)...
+ -> Calculated Monthly EMI   : Rs. 6,961.35
+ -> Total Interest Payable   : Rs. 1,768.11
+ -> Total Repayment Obligation: Rs. 41,768.11
+
+ Amortization Breakdown Table:
+ Month  | Due Date     | Opening Bal   | EMI        | Principal   | Interest   | Closing Bal 
+ ----------------------------------------------------------------------------------------
+ #1     | 2026-11-26   | Rs. 40,000.00 | Rs. 6,961.35 | Rs. 6,461.35 | Rs. 500.00 | Rs. 33,538.65
+ #2     | 2026-12-26   | Rs. 33,538.65 | Rs. 6,961.35 | Rs. 6,542.12 | Rs. 419.23 | Rs. 26,996.53
+ #3     | 2027-01-25   | Rs. 26,996.53 | Rs. 6,961.35 | Rs. 6,623.89 | Rs. 337.46 | Rs. 20,372.64
+ #4     | 2027-02-24   | Rs. 20,372.64 | Rs. 6,961.35 | Rs. 6,706.69 | Rs. 254.66 | Rs. 13,665.95
+ #5     | 2027-03-26   | Rs. 13,665.95 | Rs. 6,961.35 | Rs. 6,790.53 | Rs. 170.82 | Rs. 6,875.42
+ #6     | 2027-04-25   | Rs. 6,875.42  | Rs. 6,961.36 | Rs. 6,875.42 | Rs. 85.94  | Rs. 0.00    
+
+[Step 3] Publishing to P2P Marketplace & Aggregating Lender Funds (FR-003)...
+ -> Listing published on marketplace with ID: LN-2026-0033
+ -> Lender Alice commits Rs. 25,000.00 into Escrow...
+ -> Lender Bob commits Rs. 15,000.00 into Escrow...
+ -> Total Funded Amount: Rs. 40,000.00 / Rs. 40,000.00
+ -> Listing State Transition: FULLY_FUNDED
+
+[Step 4] Processing Borrower Installment & Distributing Dividends (FR-004)...
+ -> Borrower settles Installment #1 (Rs. 6,961.35) via Gateway.
+ -> ACID Ledger Transaction Dispatched:
+    - Lender Alice (62.5% share) credited: Rs. 4,350.84
+    - Lender Bob   (37.5% share) credited: Rs. 2,610.51
+    - Sum of Payouts: Rs. 6,961.35 (Balance conserved).
+
+[Step 5] Simulating Overdue Scenarios & Automated Default Warnings (FR-005)...
+ -> Day T+2 (Grace Period): [GRACE_PERIOD_REMINDER]
+    Message: Reminder: Installment #2 is 2 day(s) past due. Please settle within the 3-day grace period to avoid penalties.
+ -> Day T+6 (First Overdue): [FIRST_OVERDUE_WARNING]
+    Message: Urgent Overdue Warning: Grace period expired. Installment #2 is 6 days overdue. A late fee of Rs. 139.23 has been levied.
+ -> Day T+18 (Default Triggered): [DEFAULT_NOTICE]
+    Message: FORMAL DEFAULT NOTICE: Loan LN-2026-0033 installment #2 is 18 days delinquent. Credit rating downgraded to High Risk. Collection proceedings initiated.
+    Risk Downgrade Flag: True
+
+================================================================================
+ DEMONSTRATION COMPLETE: ALL 5 FUNCTIONAL REQUIREMENTS VERIFIED SUCCESSFULLY.
+================================================================================

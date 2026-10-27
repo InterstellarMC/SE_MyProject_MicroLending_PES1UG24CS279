@@ -1,0 +1,5 @@
+Demo stdout is byte-for-byte identical to the baseline.
+All 8 existing pytest cases passed.
+Bandit and Flake8 exit codes are zero.
+Pylint exceeds 9.5; remaining refactor suggestions are retained.
+No warning suppressions or relaxed checker limits were added.
