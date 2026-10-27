@@ -13,6 +13,7 @@ from typing import List
 
 @dataclass
 class Installment:
+    """One scheduled payment and its remaining balance."""
     month_number: int
     due_date: date
     opening_balance: float
@@ -25,6 +26,7 @@ class Installment:
 
 @dataclass
 class RepaymentSchedule:
+    """Loan totals and the list of scheduled payments."""
     principal: float
     annual_interest_rate: float
     tenure_months: int
@@ -42,6 +44,7 @@ class AmortizationEngine:
 
     @staticmethod
     def calculate_emi(principal: float, apr: float, tenure_months: int) -> float:
+        """Return the rounded monthly payment for a positive-rate loan."""
         if principal <= 0 or apr <= 0 or tenure_months <= 0:
             raise ValueError("Principal, APR, and tenure must all be strictly positive.")
 
@@ -54,6 +57,7 @@ class AmortizationEngine:
     def generate_schedule(
         self, principal: float, apr: float, tenure_months: int, start_date: date = None
     ) -> RepaymentSchedule:
+        """Build the payment schedule and reconcile the final balance."""
         if start_date is None:
             start_date = date.today()
 

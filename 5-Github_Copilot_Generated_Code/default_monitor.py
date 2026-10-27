@@ -9,10 +9,10 @@ Course: UE24CS341A - Software Engineering
 from dataclasses import dataclass
 from datetime import date
 from enum import Enum
-from typing import List
 
 
 class AlertLevel(str, Enum):
+    """Reminder and default stages based on days overdue."""
     ON_TIME = "ON_TIME"
     GRACE_PERIOD_REMINDER = "GRACE_PERIOD_REMINDER"  # 1 to 3 days overdue
     FIRST_OVERDUE_WARNING = "FIRST_OVERDUE_WARNING"  # 4 to 14 days overdue
@@ -21,6 +21,7 @@ class AlertLevel(str, Enum):
 
 @dataclass
 class AlertNotification:
+    """Details of a repayment warning for a borrower."""
     borrower_id: str
     loan_id: str
     installment_month: int
@@ -44,6 +45,7 @@ class DefaultMonitor:
     def check_installment_status(
         self, borrower_id: str, loan_id: str, installment_month: int, due_date: date, emi_amount: float, current_date: date
     ) -> AlertNotification:
+        """Choose a warning and penalty from the installment due date."""
         overdue_days = (current_date - due_date).days
 
         if overdue_days <= 0:

@@ -12,6 +12,7 @@ from typing import Optional
 
 
 class RiskTier(str, Enum):
+    """Risk categories used by the assessment result."""
     LOW = "Low"
     MEDIUM = "Medium"
     HIGH = "High"
@@ -20,6 +21,7 @@ class RiskTier(str, Enum):
 
 @dataclass
 class FinancialProfile:
+    """Income, debt and repayment details supplied for assessment."""
     monthly_income: float
     existing_monthly_debt: float
     employment_tenure_months: int
@@ -29,6 +31,7 @@ class FinancialProfile:
 
 @dataclass
 class AssessmentResult:
+    """Score, lending limit and decision returned for an application."""
     credit_score: int
     risk_tier: RiskTier
     debt_to_income_ratio: float
@@ -50,13 +53,14 @@ class CreditRiskAssessor:
 
     def evaluate(self, profile: FinancialProfile, requested_amount: float) -> AssessmentResult:
         # Step 1: Input Validation
+        """Validate a borrower profile and apply the credit scoring rules."""
         if profile.monthly_income <= 0:
             raise ValueError("Monthly income must be strictly greater than zero.")
         if profile.existing_monthly_debt < 0:
             raise ValueError("Existing monthly debt cannot be negative.")
         if profile.employment_tenure_months < 0:
             raise ValueError("Employment tenure cannot be negative.")
-        if not (0.0 <= profile.repayment_history_ratio <= 1.0):
+        if not 0.0 <= profile.repayment_history_ratio <= 1.0:
             raise ValueError("Repayment history ratio must be between 0.0 and 1.0.")
         if requested_amount <= 0:
             raise ValueError("Requested loan amount must be positive.")

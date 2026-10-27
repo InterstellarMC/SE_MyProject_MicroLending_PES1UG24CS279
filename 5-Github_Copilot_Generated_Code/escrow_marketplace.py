@@ -13,6 +13,7 @@ from typing import Dict, List, Optional
 
 
 class LoanListingStatus(str, Enum):
+    """Funding states supported by a loan listing."""
     PENDING_APPROVAL = "PENDING_APPROVAL"
     OPEN_FOR_FUNDING = "OPEN_FOR_FUNDING"
     FULLY_FUNDED = "FULLY_FUNDED"
@@ -22,6 +23,7 @@ class LoanListingStatus(str, Enum):
 
 @dataclass
 class LenderCommitment:
+    """A lender contribution with its creation time."""
     lender_id: str
     amount: float
     timestamp: datetime = field(default_factory=datetime.now)
@@ -29,6 +31,7 @@ class LenderCommitment:
 
 @dataclass
 class LoanListing:
+    """Loan details, funding status and lender contributions."""
     loan_id: str
     borrower_id: str
     requested_amount: float
@@ -52,17 +55,20 @@ class EscrowMarketplace:
         self._escrow_locked_balances: Dict[str, float] = {}
 
     def register_lender(self, lender_id: str, initial_deposit: float):
+        """Add a non-negative deposit to a lender wallet."""
         if initial_deposit < 0:
             raise ValueError("Initial deposit cannot be negative.")
         self._lender_wallets[lender_id] = self._lender_wallets.get(lender_id, 0.0) + initial_deposit
         self._escrow_locked_balances[lender_id] = self._escrow_locked_balances.get(lender_id, 0.0)
 
     def get_lender_wallet_balance(self, lender_id: str) -> float:
+        """Return a lender balance, or zero for an unknown lender."""
         return self._lender_wallets.get(lender_id, 0.0)
 
     def publish_listing(
         self, loan_id: str, borrower_id: str, amount: float, risk_tier: str, apr: float, tenure: int
     ) -> LoanListing:
+        """Create and store a loan listing for peer funding."""
         if amount <= 0:
             raise ValueError("Loan amount must be positive.")
         listing = LoanListing(
@@ -124,4 +130,5 @@ class EscrowMarketplace:
         return True
 
     def get_listing(self, loan_id: str) -> Optional[LoanListing]:
+        """Return the listing if the loan ID is known."""
         return self._listings.get(loan_id)

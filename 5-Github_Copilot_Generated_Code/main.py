@@ -14,6 +14,7 @@ from default_monitor import DefaultMonitor
 
 
 def main():
+    """Run the sample borrower assessment, funding and repayment flow."""
     print("=" * 80)
     print(" MICRO-LENDING & PEER CREDIT RISK ASSESSOR PLATFORM")
     print(" PES University - Dept. of CSE | Problem Statement #33")
@@ -112,24 +113,21 @@ def main():
     # 4. Repayment Processing & Proportional Payouts (FR-004, NFR-001)
     # -------------------------------------------------------------
     print(f"\n[Step 4] Processing Borrower Installment & Distributing Dividends (FR-004)...")
-    first_emi = schedule.installments[0]
-    total_repaid = first_emi.emi_amount
-
-    # Proportional payout calculation
-    alice_share = total_repaid * (25000.0 / requested_principal)
-    bob_share = total_repaid * (15000.0 / requested_principal)
-
-    print(f" -> Borrower settles Installment #1 (Rs. {total_repaid:,.2f}) via Gateway.")
-    first_emi.status = "PAID"
-    print(f" -> ACID Ledger Transaction Dispatched:")
-    print(f"    - Lender Alice (62.5% share) credited: Rs. {alice_share:,.2f}")
-    print(f"    - Lender Bob   (37.5% share) credited: Rs. {bob_share:,.2f}")
-    print(f"    - Sum of Payouts: Rs. {alice_share + bob_share:,.2f} (Balance conserved).")
+    _show_repayment(schedule, requested_principal)
 
     # -------------------------------------------------------------
     # 5. Automated Default Monitoring & Warning Service (FR-005)
     # -------------------------------------------------------------
     print(f"\n[Step 5] Simulating Overdue Scenarios & Automated Default Warnings (FR-005)...")
+    _show_default_alerts(schedule, borrower_id, loan_id)
+
+    print("\n" + "=" * 80)
+    print(" DEMONSTRATION COMPLETE: ALL 5 FUNCTIONAL REQUIREMENTS VERIFIED SUCCESSFULLY.")
+    print("=" * 80)
+
+
+def _show_default_alerts(schedule, borrower_id, loan_id):
+    """Display the grace-period, late-payment and default examples."""
     monitor = DefaultMonitor()
     inst2 = schedule.installments[1]
 
@@ -158,9 +156,24 @@ def main():
     print(f"    Message: {alert_default.message}")
     print(f"    Risk Downgrade Flag: {alert_default.downgrade_risk_tier}")
 
-    print("\n" + "=" * 80)
-    print(" DEMONSTRATION COMPLETE: ALL 5 FUNCTIONAL REQUIREMENTS VERIFIED SUCCESSFULLY.")
-    print("=" * 80)
+
+
+def _show_repayment(schedule, requested_principal):
+    """Print the sample repayment and proportional lender shares."""
+    first_emi = schedule.installments[0]
+    total_repaid = first_emi.emi_amount
+
+    # Proportional payout calculation
+    alice_share = total_repaid * (25000.0 / requested_principal)
+    bob_share = total_repaid * (15000.0 / requested_principal)
+
+    print(f" -> Borrower settles Installment #1 (Rs. {total_repaid:,.2f}) via Gateway.")
+    first_emi.status = "PAID"
+    print(f" -> ACID Ledger Transaction Dispatched:")
+    print(f"    - Lender Alice (62.5% share) credited: Rs. {alice_share:,.2f}")
+    print(f"    - Lender Bob   (37.5% share) credited: Rs. {bob_share:,.2f}")
+    print(f"    - Sum of Payouts: Rs. {alice_share + bob_share:,.2f} (Balance conserved).")
+
 
 
 if __name__ == "__main__":
