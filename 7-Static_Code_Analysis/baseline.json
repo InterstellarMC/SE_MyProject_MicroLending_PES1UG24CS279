@@ -1,0 +1,25 @@
+{
+  "commit": "d72147b963903e90da5969a65d5f8bf2f39af891",
+  "commands": {
+    "pylint": {
+      "exit_code": 28,
+      "command": "pylint 5-Github_Copilot_Generated_Code/amortization_schedule.py 5-Github_Copilot_Generated_Code/credit_risk_assessor.py 5-Github_Copilot_Generated_Code/default_monitor.py 5-Github_Copilot_Generated_Code/escrow_marketplace.py 5-Github_Copilot_Generated_Code/main.py"
+    },
+    "bandit": {
+      "exit_code": 0,
+      "command": "bandit -r 5-Github_Copilot_Generated_Code"
+    },
+    "flake8": {
+      "exit_code": 1,
+      "command": "flake8 5-Github_Copilot_Generated_Code/amortization_schedule.py 5-Github_Copilot_Generated_Code/credit_risk_assessor.py 5-Github_Copilot_Generated_Code/default_monitor.py 5-Github_Copilot_Generated_Code/escrow_marketplace.py 5-Github_Copilot_Generated_Code/main.py"
+    },
+    "demo": {
+      "exit_code": 0,
+      "command": "python 5-Github_Copilot_Generated_Code/main.py"
+    },
+    "tests": {
+      "exit_code": 0,
+      "command": "pytest -q 6-Software_Testing_Tools/test_micro_lending.py"
+    }
+  }
+}

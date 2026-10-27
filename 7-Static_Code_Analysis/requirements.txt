@@ -1,0 +1,4 @@
+pylint==3.3.9
+bandit==1.8.6
+flake8==7.3.0
+pytest==8.4.2
