@@ -1,0 +1,10 @@
+$ run --include=*/credit_risk_assessor.py -m pytest -q 8-Code_and_Branch_Coverage/CodeCoverageTest_credit_risk_assessor.py
+...........                                                              [100%]
+11 passed in 0.02s
+
+$ coverage report -m --fail-under=90
+Name                                                      Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------------------------
+5-Github_Copilot_Generated_Code/credit_risk_assessor.py      68      0   100%
+---------------------------------------------------------------------------------------
+TOTAL                                                        68      0   100%
